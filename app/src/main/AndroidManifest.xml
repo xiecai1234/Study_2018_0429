@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.xiecaibao.study" >
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <application
+        android:allowBackup="true"
+        android:name=".MyApplication"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme" >
+        <activity android:name=".activity.MainActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.LeakActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.xxx" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.example.xiecaibao.study.activity.FeedsActivity" />
+        <activity android:name="com.example.xiecaibao.study.activity.TraceActivity" />
+        <activity android:name="com.example.xiecaibao.study.activity.ViewPagerActivity" />
+        <activity android:name=".activity.MyTestFragmentActivity"/>
+        <activity android:name=".activity.RxJavaTestActivity" />
+        <activity android:name=".mvp.view.UserLoginActivity"/>
+        <activity android:name=".activity.TestWeightActivity"/>
+        <activity android:name=".activity.LargeImageActivity"/>
+        <activity android:name=".photo.PhotoActivity"/>
+        <activity android:name=".activity.TestImageActivity"/>
+        <activity android:name=".photo.AdvancedPhotoActivity"/>
+        <activity android:name=".activity.MyViewPager"/>
+        <activity android:name=".activity.EventDispatchActivity"/>
+    </application>
+
+</manifest>
