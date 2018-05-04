@@ -1,6 +1,7 @@
 package com.example.xiecaibao.study.eschool.h5;
 
 import android.annotation.SuppressLint;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
@@ -43,6 +44,11 @@ public class H5 extends AppCompatActivity {
     private void initWebView() {
         WebSettings settings = webView.getSettings();
         settings.setJavaScriptEnabled(true);  //设置运行使用JS
+        //打开允许调试的开关
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            webView.setWebContentsDebuggingEnabled(true);
+        }
+        //Chrom浏览器中输入chrome://inspect/#devices
         ButtonClick click = new ButtonClick();
         //这里添加JS的交互事件，这样H5就可以调用原生的代码
         webView.addJavascriptInterface(click, click.toString());
@@ -66,6 +72,7 @@ public class H5 extends AppCompatActivity {
     class ButtonClick{
 
         //这是 button.click0() 的触发事件
+        //在子线程中执行
         //H5调用方法：javascript:button.click0()
         @JavascriptInterface
         public void click0(){

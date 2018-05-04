@@ -1,14 +1,13 @@
 package com.example.xiecaibao.study.activity;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 
-import com.example.xiecaibao.study.R;
 import com.example.xiecaibao.study.eschool.EschoolActivity;
 import com.example.xiecaibao.study.eschool.h5.H5;
 import com.example.xiecaibao.study.eventbus.EventBusTestFirstActivity;
@@ -17,9 +16,9 @@ import com.example.xiecaibao.study.okhttp3.OkhttpTestActivity;
 import com.example.xiecaibao.study.photo.AdvancedPhotoActivity;
 import com.example.xiecaibao.study.photo.GlideTestActivity;
 import com.example.xiecaibao.study.photo.PhotoActivity;
-import com.example.xiecaibao.study.rxjava.RxJavaActivity;
 import com.example.xiecaibao.study.rxjava.RxJavafixRetrofitActivity;
 import com.example.xiecaibao.study.utils.LogX;
+import com.example.xiecaibao.study.video.VideoActivity;
 import com.example.xiecaibao.study.volley.VolleyTestActivity;
 
 import io.reactivex.Observable;
@@ -344,6 +343,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         layout.addView(btn_glide);
+
+        Button btn_video = new Button(this);
+        btn_video.setText("VideoView+MediaController");
+        btn_video.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, VideoActivity.class));
+            }
+        });
+        layout.addView(btn_video);
     }
 
 
