@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#f5f5f5">
+
+    <RelativeLayout
+        android:id="@+id/rl_title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:background="#ffffff">
+
+        <ImageView
+            android:id="@+id/iv_fanhui"
+            android:layout_width="22dip"
+            android:layout_height="22dip"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dip"
+            android:src="@drawable/fanhui" />
+
+        <TextView
+            android:layout_toRightOf="@id/iv_fanhui"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:layout_marginRight="16dp"
+            android:letterSpacing="-0.02"
+            android:text="校园认证"
+            android:textColor="#222222"
+            android:textSize="17sp" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl_title_bar"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:letterSpacing="0.01"
+        android:textColor="#999999"
+        android:textSize="12sp"
+        android:text="您正在开通中国银行-中银E校园平台服务，注册成功后请完善以
+下个人信息，以便更准确的核实您的身份信息" />
+
+    <RelativeLayout
+        android:id="@+id/rl_school"
+        android:layout_width="match_parent"
+        android:layout_height="62dp"
+        android:layout_below="@id/tv_info"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp">
+
+        <TextView
+            android:id="@+id/tv_school"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            android:letterSpacing="0.01"
+            android:textColor="#222222"
+            android:textSize="15sp"
+            android:text="学校" />
+
+        <TextView
+            android:id="@+id/tv_school_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:letterSpacing="0.01"
+            android:textColor="#d8d8d8"
+            android:textSize="15sp"
+            android:text="请选择所在学校" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_type"
+        android:layout_width="match_parent"
+        android:layout_height="62dp"
+        android:layout_below="@id/rl_school"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp">
+        <TextView
+            android:id="@+id/tv_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:letterSpacing="0.01"
+            android:textColor="#222222"
+            android:textSize="15sp"
+            android:text="身份" />
+        <TextView
+            android:id="@+id/tv_type_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:letterSpacing="0.01"
+            android:textColor="#d8d8d8"
+            android:textSize="15sp"
+            android:text="老师" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_name"
+        android:layout_width="match_parent"
+        android:layout_height="62dp"
+        android:layout_below="@id/rl_type"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp">
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:letterSpacing="0.01"
+            android:textColor="#222222"
+            android:textSize="15sp"
+            android:text="姓名" />
+        <TextView
+            android:id="@+id/tv_name_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:letterSpacing="0.01"
+            android:textColor="#d8d8d8"
+            android:textSize="15sp"
+            android:text="张三" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_phone"
+        android:layout_width="match_parent"
+        android:layout_height="62dp"
+        android:layout_below="@id/rl_name"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp">
+        <TextView
+            android:id="@+id/tv_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:letterSpacing="0.01"
+            android:textColor="#222222"
+            android:textSize="15sp"
+            android:text="手机号" />
+        <TextView
+            android:id="@+id/tv_phone_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:letterSpacing="0.01"
+            android:textColor="#d8d8d8"
+            android:textSize="15sp"
+            android:text="186xxxxxxxx" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_ID"
+        android:layout_width="match_parent"
+        android:layout_height="62dp"
+        android:layout_below="@id/rl_phone"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp">
+        <TextView
+            android:id="@+id/tv_ID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:letterSpacing="0.01"
+            android:textColor="#222222"
+            android:textSize="15sp"
+            android:text="身份证" />
+        <TextView
+            android:id="@+id/tv_ID_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:letterSpacing="0.01"
+            android:textColor="#d8d8d8"
+            android:textSize="15sp"
+            android:text="3607821989xxxx" />
+    </RelativeLayout>
+    <Button
+        android:id="@+id/btn_next"
+        android:layout_below="@id/rl_ID"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="40dp"
+        android:text="下一步"
+        android:background="#fff5c1"
+        />
+</RelativeLayout>

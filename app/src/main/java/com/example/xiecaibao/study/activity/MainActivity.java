@@ -6,12 +6,21 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 
 import com.example.xiecaibao.study.R;
+import com.example.xiecaibao.study.eschool.EschoolActivity;
+import com.example.xiecaibao.study.eschool.h5.H5;
+import com.example.xiecaibao.study.eventbus.EventBusTestFirstActivity;
 import com.example.xiecaibao.study.mvp.view.UserLoginActivity;
+import com.example.xiecaibao.study.okhttp3.OkhttpTestActivity;
 import com.example.xiecaibao.study.photo.AdvancedPhotoActivity;
+import com.example.xiecaibao.study.photo.GlideTestActivity;
 import com.example.xiecaibao.study.photo.PhotoActivity;
+import com.example.xiecaibao.study.rxjava.RxJavaActivity;
+import com.example.xiecaibao.study.rxjava.RxJavafixRetrofitActivity;
 import com.example.xiecaibao.study.utils.LogX;
+import com.example.xiecaibao.study.volley.VolleyTestActivity;
 
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
@@ -59,9 +68,61 @@ public class MainActivity extends AppCompatActivity {
         initView();
     }
 
+    private void test1() {
+        Observable.just("hello").subscribe(new Consumer<String>() {
+            // 每次接收到Observable的事件都会调用Consumer.accept（）
+            @Override public void accept(String s) throws Exception {
+                System.out.println(s);
+            }
+        });
+    }
+
+    private void test2() {
+        Observable.create(new ObservableOnSubscribe<Integer>() {
+            @Override
+            public void subscribe(ObservableEmitter<Integer> emitter) throws Exception {
+                emitter.onNext(1);
+                emitter.onNext(2);
+                emitter.onNext(3);
+                emitter.onComplete();
+            }
+        }).subscribe(new Observer<Integer>() {
+            private Disposable mDisposable;
+            @Override
+            public void onSubscribe(Disposable d) {
+                LogX.d(TAG, "开始采用subscribe连接");
+                mDisposable = d;
+            }
+
+            @Override
+            public void onNext(Integer value) {
+                LogX.d(TAG, "call onNext, values is:" + value);
+                if (2 == value) {
+                    mDisposable.dispose();
+                    boolean isDisposed = mDisposable.isDisposed();
+                    LogX.d(TAG, "已经切断了连接：" + mDisposable.isDisposed());
+                }
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                LogX.d(TAG, "call onError:" + e.toString());
+            }
+
+            @Override
+            public void onComplete() {
+                LogX.d(TAG, "call onComplete");
+            }
+        });
+    }
+
     private void initView() {
+        ScrollView scrollView = new ScrollView(this);
         LinearLayout layout = new LinearLayout(this);
         layout.setOrientation(LinearLayout.VERTICAL);
+        scrollView.addView(layout);
+        setContentView(scrollView);
+
         Button btn1 = new Button(this);
         btn1.setText("fragmenttest");
         btn1.setOnClickListener(new View.OnClickListener() {
@@ -154,54 +215,136 @@ public class MainActivity extends AppCompatActivity {
         });
         layout.addView(btn_event_dispatch);
 
-        setContentView(layout);
-    }
-
-    private void test1() {
-        Observable.just("hello").subscribe(new Consumer<String>() {
-            // 每次接收到Observable的事件都会调用Consumer.accept（）
-            @Override public void accept(String s) throws Exception {
-                System.out.println(s);
+        Button btn_test_layout = new Button(this);
+        btn_test_layout.setText("testlayout");
+        btn_test_layout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, TestLayoutActivity.class));
             }
         });
-    }
+        layout.addView(btn_test_layout);
 
-    private void test2() {
-        Observable.create(new ObservableOnSubscribe<Integer>() {
+        Button btn_leak = new Button(this);
+        btn_leak.setText("MemoryLeak");
+        btn_leak.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void subscribe(ObservableEmitter<Integer> emitter) throws Exception {
-                emitter.onNext(1);
-                emitter.onNext(2);
-                emitter.onNext(3);
-                emitter.onComplete();
-            }
-        }).subscribe(new Observer<Integer>() {
-            private Disposable mDisposable;
-            @Override
-            public void onSubscribe(Disposable d) {
-                LogX.d(TAG, "开始采用subscribe连接");
-                mDisposable = d;
-            }
-
-            @Override
-            public void onNext(Integer value) {
-                LogX.d(TAG, "call onNext, values is:" + value);
-                if (2 == value) {
-                    mDisposable.dispose();
-                    boolean isDisposed = mDisposable.isDisposed();
-                    LogX.d(TAG, "已经切断了连接：" + mDisposable.isDisposed());
-                }
-            }
-
-            @Override
-            public void onError(Throwable e) {
-                LogX.d(TAG, "call onError:" + e.toString());
-            }
-
-            @Override
-            public void onComplete() {
-                LogX.d(TAG, "call onComplete");
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, LeakActivity.class));
             }
         });
+        layout.addView(btn_leak);
+
+        Button btn_rxjava = new Button(this);
+        btn_rxjava.setText("RxJava");
+        btn_rxjava.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, RxJavafixRetrofitActivity.class));
+            }
+        });
+        layout.addView(btn_rxjava);
+
+        Button btn_butterknife = new Button(this);
+        btn_butterknife.setText("btn_butterknife");
+        btn_butterknife.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, ButterKnifeTestActivity.class));
+            }
+        });
+        layout.addView(btn_butterknife);
+
+        Button btn_Volley = new Button(this);
+        btn_Volley.setText("Volley");
+        btn_Volley.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, VolleyTestActivity.class));
+            }
+        });
+        layout.addView(btn_Volley);
+
+        Button btn_okhttp = new Button(this);
+        btn_okhttp.setText("okhttp");
+        btn_okhttp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, OkhttpTestActivity.class));
+            }
+        });
+        layout.addView(btn_okhttp);
+
+        Button btn_eventbus = new Button(this);
+        btn_eventbus.setText("EventBus");
+        btn_eventbus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, EventBusTestFirstActivity.class));
+            }
+        });
+        layout.addView(btn_eventbus);
+
+        Button btn_swipeback = new Button(this);
+        btn_swipeback.setText("SwipeBack");
+        btn_swipeback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, SwipeBackTestActivity.class));
+            }
+        });
+        layout.addView(btn_swipeback);
+
+        Button btn_thread_pool = new Button(this);
+        btn_thread_pool.setText("ThreadPool");
+        btn_thread_pool.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, ThreadPoolTest.class));
+            }
+        });
+        layout.addView(btn_thread_pool);
+
+        Button btn_toolbar = new Button(this);
+        btn_toolbar.setText("Toolbar");
+        btn_toolbar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, ToolbarTest.class));
+            }
+        });
+        layout.addView(btn_toolbar);
+
+        Button btn_school = new Button(this);
+        btn_school.setText("School");
+        btn_school.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, EschoolActivity.class));
+            }
+        });
+        layout.addView(btn_school);
+
+        Button btn_h5 = new Button(this);
+        btn_h5.setText("h5");
+        btn_h5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, H5.class));
+            }
+        });
+        layout.addView(btn_h5);
+
+        Button btn_glide = new Button(this);
+        btn_glide.setText("Glide");
+        btn_glide.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, GlideTestActivity.class));
+            }
+        });
+        layout.addView(btn_glide);
     }
+
+
 }

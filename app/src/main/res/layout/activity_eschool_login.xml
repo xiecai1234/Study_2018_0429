@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="21dp"
+    android:background="#ffffff"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff">
+
+        <ImageView
+            android:id="@+id/iv_guanbi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="12dip"
+            android:src="@drawable/guanbi" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl_title_bar"
+        android:gravity="center"
+        android:text="账号登录"
+        android:textColor="#222222"
+        android:textSize="30sp" />
+
+    <EditText
+        android:id="@+id/et_user_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_title"
+        android:layout_marginLeft="16dip"
+        android:text="请输入手机号/邮箱"
+        android:letterSpacing="-0.02"
+        android:textColor="#d8d8d8"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/et_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/et_user_name"
+        android:layout_marginLeft="16dip"
+        android:letterSpacing="-0.02"
+        android:text="请输入密码"
+        android:textColor="#d8d8d8"
+        android:textSize="16sp" />
+
+    <RelativeLayout
+        android:id="@+id/rl_quick_regist_and_forget_pwd"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_below="@id/et_password"
+
+        android:layout_marginLeft="16dip"
+        android:layout_marginRight="16dp"
+        android:background="#ffffff">
+
+        <TextView
+            android:id="@+id/tv_quick_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:letterSpacing="0.04"
+            android:text="快速注册"
+            android:textColor="#222222"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_forget_pwd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:letterSpacing="-0.02"
+            android:text="忘记密码"
+            android:textColor="#222222"
+            android:textSize="14sp" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl_quick_regist_and_forget_pwd"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="20dp"
+        android:letterSpacing="-0.02"
+        android:text="登录"
+        android:textColor="#222222"
+        android:background="#fff5c1"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/btn_fingerlogin"
+        android:layout_width="match_parent"
+        android:layout_height="21dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="32dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:gravity="center"
+        android:letterSpacing="-0.02"
+        android:text="指纹登录"
+        android:textColor="#222222"
+        android:textSize="14sp" />
+</RelativeLayout>

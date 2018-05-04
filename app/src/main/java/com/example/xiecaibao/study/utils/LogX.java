@@ -12,11 +12,11 @@ public class LogX {
 	 * @param msg
 	 */
 	public static void d(String tag, String msg) {
-		writeLog(Log.DEBUG, tag, msg, null, LOG_LEVEL);
+		writeLog(Log.INFO, tag, msg, null, LOG_LEVEL);
 	}
 
 	public static void d(String tag, String msg, Throwable e) {
-		writeLog(Log.DEBUG, tag, msg, e, LOG_LEVEL);
+		writeLog(Log.INFO, tag, msg, e, LOG_LEVEL);
 	}
 
 	public static void i(String tag, String msg) {

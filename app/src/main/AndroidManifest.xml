@@ -39,6 +39,27 @@
         <activity android:name=".photo.AdvancedPhotoActivity"/>
         <activity android:name=".activity.MyViewPager"/>
         <activity android:name=".activity.EventDispatchActivity"/>
+        <activity android:name=".activity.TestLayoutActivity"/>
+        <activity android:name=".rxjava.RxJavaActivity"/>
+        <activity android:name=".rxjava.RxJavafixRetrofitActivity"/>
+        <activity android:name=".activity.ButterKnifeTestActivity"/>
+        <activity android:name=".volley.VolleyTestActivity"/>
+        <activity android:name=".okhttp3.OkhttpTestActivity"/>
+        <activity android:name=".eventbus.EventBusTestFirstActivity"/>
+        <activity android:name=".eventbus.EventBusTestSecondActivity"/>
+        <activity android:name=".activity.SwipeBackTestActivity"
+            android:theme="@style/SwipeBackTheme"/>
+        <activity android:name=".activity.ThreadPoolTest"/>
+        <activity android:name=".activity.ToolbarTest"
+            android:theme="@style/AppTheme_1"/>
+        <activity android:name=".eschool.EschoolActivity"
+            android:theme="@style/AppTheme_1"/>
+        <activity android:name=".eschool.LoginActivity"
+            android:theme="@style/AppTheme_1"/>
+        <activity android:name=".eschool.h5.TestH5Activity"/>
+        <activity android:name=".eschool.h5.TestH5Activity2"/>
+        <activity android:name=".eschool.h5.H5"/>
+        <activity android:name=".photo.GlideTestActivity"/>
     </application>
 
 </manifest>
