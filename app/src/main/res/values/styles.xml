@@ -41,7 +41,7 @@
         <!-- 使用 API Level 22以上编译的话，要拿掉前綴字 -->
         <item name="windowNoTitle">true</item>
         <!--隐藏状态栏-->
-        <item name="android:windowFullscreen">true</item>
+        <!--<item name="android:windowFullscreen">true</item>-->
         <!--colorPrimaryDark对应状态栏的颜色-->
         <item name="colorPrimaryDark">@color/statusColor</item>
         <!--colorPrimary 对应ToolBar的颜色-->
@@ -61,5 +61,18 @@
     <color name="editColor">#FD87A9</color>
     <!--Window color-->
     <color name="widowColor">#ffffff</color>
+
+    <style name="top_nav">
+        <item name="android:background">#fff</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">44dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+    <style name="common_line_gray_90">
+        <item name="android:background">#e5e5e5</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1px</item>
+    </style>
 
 </resources>

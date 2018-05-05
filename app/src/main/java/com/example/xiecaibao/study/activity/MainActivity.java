@@ -17,6 +17,7 @@ import com.example.xiecaibao.study.photo.AdvancedPhotoActivity;
 import com.example.xiecaibao.study.photo.GlideTestActivity;
 import com.example.xiecaibao.study.photo.PhotoActivity;
 import com.example.xiecaibao.study.rxjava.RxJavafixRetrofitActivity;
+import com.example.xiecaibao.study.tab.TabActivity;
 import com.example.xiecaibao.study.utils.LogX;
 import com.example.xiecaibao.study.video.VideoActivity;
 import com.example.xiecaibao.study.volley.VolleyTestActivity;
@@ -353,6 +354,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         layout.addView(btn_video);
+
+        Button btn_tab= new Button(this);
+        btn_tab.setText("TAB");
+        btn_tab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, TabActivity.class));
+            }
+        });
+        layout.addView(btn_tab);
     }
 
 

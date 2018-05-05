@@ -63,6 +63,8 @@
         <activity android:name=".photo.GlideTestActivity"/>
         <activity android:name=".video.VideoActivity"
             android:screenOrientation="landscape"/>
+        <activity android:name=".tab.TabActivity"
+            android:theme="@style/AppTheme_1"/>
     </application>
 
 </manifest>
