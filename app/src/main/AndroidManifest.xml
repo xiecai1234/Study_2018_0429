@@ -65,6 +65,9 @@
             android:screenOrientation="landscape"/>
         <activity android:name=".tab.TabActivity"
             android:theme="@style/AppTheme_1"/>
+        <activity android:name=".guide.GuideActivity"
+            android:theme="@style/AppTheme_1"
+            />
     </application>
 
 </manifest>

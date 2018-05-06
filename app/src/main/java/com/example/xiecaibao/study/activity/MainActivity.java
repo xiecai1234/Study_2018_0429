@@ -11,6 +11,7 @@ import android.widget.ScrollView;
 import com.example.xiecaibao.study.eschool.EschoolActivity;
 import com.example.xiecaibao.study.eschool.h5.H5;
 import com.example.xiecaibao.study.eventbus.EventBusTestFirstActivity;
+import com.example.xiecaibao.study.guide.GuideActivity;
 import com.example.xiecaibao.study.mvp.view.UserLoginActivity;
 import com.example.xiecaibao.study.okhttp3.OkhttpTestActivity;
 import com.example.xiecaibao.study.photo.AdvancedPhotoActivity;
@@ -364,6 +365,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         layout.addView(btn_tab);
+
+        Button btn_guide= new Button(this);
+        btn_guide.setText("Guide");
+        btn_guide.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, GuideActivity.class));
+            }
+        });
+        layout.addView(btn_guide);
     }
 
 
