@@ -12,6 +12,7 @@ import com.example.xiecaibao.study.eschool.EschoolActivity;
 import com.example.xiecaibao.study.eschool.h5.H5;
 import com.example.xiecaibao.study.eventbus.EventBusTestFirstActivity;
 import com.example.xiecaibao.study.guide.GuideActivity;
+import com.example.xiecaibao.study.jnitest.JniTestActivity;
 import com.example.xiecaibao.study.mvp.view.UserLoginActivity;
 import com.example.xiecaibao.study.okhttp3.OkhttpTestActivity;
 import com.example.xiecaibao.study.photo.AdvancedPhotoActivity;
@@ -375,6 +376,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         layout.addView(btn_guide);
+
+        Button btn_jni= new Button(this);
+        btn_jni.setText("JNI");
+        btn_jni.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, JniTestActivity.class));
+            }
+        });
+        layout.addView(btn_jni);
     }
 
 

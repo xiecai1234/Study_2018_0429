@@ -68,6 +68,7 @@
         <activity android:name=".guide.GuideActivity"
             android:theme="@style/AppTheme_1"
             />
+        <activity android:name=".jnitest.JniTestActivity"/>
     </application>
 
 </manifest>
